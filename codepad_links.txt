@@ -77,3 +77,11 @@ c++ code - 17 lines, http://codepad.org/BphczYMp
 c++ code - 11 lines, http://codepad.org/kycoY3tB
 c code - 9 lines, http://codepad.org/0YGYHTif
 c++ code - 11 lines, http://codepad.org/RxcBrw6X
+c code - 24 lines, http://codepad.org/UsSzPHBv
+c code - 32 lines, http://codepad.org/AMJCR9Th
+c code - 4 lines, http://codepad.org/78ADw4fm
+c code - 7 lines, http://codepad.org/AXVJgXhR
+haskell code - 1 line, http://codepad.org/ib5LK65d
+c code - 7 lines, http://codepad.org/RGOapeiL
+c code - 7 lines, http://codepad.org/IzrvziGX
+c code - 7 lines, http://codepad.org/HxJQrlOD
