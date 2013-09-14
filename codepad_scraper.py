@@ -10,15 +10,6 @@ try:
   url_str = url_read.read()
 except:
   print "Error in opening the url."
-  
-try:
-  fopen = open('codepad_test.txt','a')
-except:
-  print "There was an error in opening the file please ensure proper permissions in this folder. Otherwise talk to the system administrator for more troubleshooting options."
-else:
-  fopen.write(url_str)
-  fopen.close()
-  print 'File successfully written to.'
 
 link_start = 0
 url_list = []
@@ -49,17 +40,18 @@ fopen = open('codepad_links.txt','a')
 error_num = 0
 
 for url in url_list:
-  url_read = urllib2.urlopen(url)
-  url_str = url_read.read().lower()
-  start = url_str.find('<span class="heading">output:</span>')
-  if (url_str.find("error",start)>-1) & (previous_urls.find(url)==-1):
-    title_start = url_str.find("<title>")
-    title_end = url_str.find("<",title_start+1)
-    paste_info = url_str[title_start+7:title_end]
-    paste_info = paste_info.replace(" - codepad","")
-    paste_info = paste_info.replace("\n"," ")
-    fopen.write(paste_info + ", " + url + "\n")
-    error_num += 1
+  if previous_urls.find(url)==-1:
+    url_read = urllib2.urlopen(url)
+    url_str = url_read.read().lower()
+    start = url_str.find('<span class="heading">output:</span>')
+    if (url_str.find("error",start)>-1):
+      title_start = url_str.find("<title>")
+      title_end = url_str.find("<",title_start+1)
+      paste_info = url_str[title_start+7:title_end]
+      paste_info = paste_info.replace(" - codepad","")
+      paste_info = paste_info.replace("\n"," ")
+      fopen.write(paste_info + ", " + url + "\n")
+      error_num += 1
     
 fopen.close()
 end_time = time.time()
